@@ -42,6 +42,15 @@ pip install -r requirements.txt
 ### 4. Get API Keys
 This project requires API keys to function properly:
 - **YouTube Data API Key**: Obtain it from [Google Cloud Console](https://console.cloud.google.com/)
+- **Flask Secret Key**: Generate a secret key for session security. You can create one using Python:
+  ```python
+  import secrets
+  print(secrets.token_hex(16))
+  ```
+  Replace the `app.secret_key` in `app.py` with your generated key:
+  ```python
+  app.secret_key = "YOUR_GENERATED_SECRET_KEY"
+  ```
 
 After obtaining your API key, open `app.py` and replace `YOUR_YOUTUBE_API_KEY_HERE` with your actual API key:
 ```python
